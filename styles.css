@@ -1,0 +1,67 @@
+.container-column {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-evenly; */
+  /* border: 1px solid black; */
+  /* align-items: center; */
+  /* margin: 1rem; */
+}
+.container-column > div {
+  border: 1px solid black;
+  border-radius: .5rem;
+  background-color: silver;
+  margin: .03rem;
+  text-align: center;
+  padding: 1rem;
+  align-self: center;
+  /* justify-content: center; */
+  /* align-items: center; */
+  width: 20rem;
+}
+.container-column > span {
+  /* border: 1px dashed green; */
+  border: 1px solid black;
+  border-radius: .5rem;
+  background-color: silver;
+  width: 10rem;
+  padding: .8rem;
+  margin: .5rem;
+}
+
+/* ----------------------------------------------------------- */
+
+.container {
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid orange; */
+  }
+
+
+  h1 {
+      text-align: center;
+      font-size: 60px;
+      background-color: black;
+      color: white;
+      border-radius: 1rem;
+      text-shadow: 1px 1px 0 yellow;
+      padding: 1rem;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 40px;
+    /* background-color: black;
+    color: white;
+    border-radius: 1rem; */
+}
+
+  button {
+    width: 60%;
+    text-align: center;
+  }
+
+  #dollars-output, #cents-output {
+    background-color: aqua;
+    text-align: center;
+  }
+

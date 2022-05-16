@@ -2,12 +2,52 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
     <title>Change Calculator</title>
   </head>
   <body>
-    <!-- Write your markup here -->
 
-    <!-- Don't forget to add your <script> tag here -->
+    <h1>Change Calculator</h1>
 
+    <div class="container-column">
+      <div>
+        <p><label for="amount-due">How much is due for the sale?</label></p>
+        $ <input id="amount-due" name="amount-due" type="number" />
+      </div>
+
+      <div>
+        <p><label for="amount-received">How much has the customer given you?</label></p>
+        $ <input id="amount-received" name="amount-received" type="number" />
+      </div>
+
+        <div>
+          <button id="calculate-change" onclick="calculateChange()">Calculate</button>
+        </div>
+    </div>
+
+    <h2 id="change">Change:</h2>
+
+    <div class="container">
+      <div class="container-column">
+          <span id="dollars-output">Dollars: </span>
+          <span id="twenty-dollar">$20: </span>
+          <span id="ten-dollar">$10: </span>
+          <span id="five-dollar">$5: </span>
+          <span id="two-dollar">$2: </span>
+          <span id="one-dollar">$1: </span>
+        </div>
+      
+
+    
+      <div class="container-column">
+        <span id="cents-output">Cents: </span>
+        <span id="quarters-output">Quarters: </span>
+        <span id="dimes-output">Dimes: </span>
+        <span id="nickels-output">Nickels: </span>
+        <span id="pennies-output">Pennies: </span>
+      </div>
+    </div>
+
+    <script src="main.js" charset="utf-8"></script>
   </body>
 </html>
