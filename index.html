@@ -2,31 +2,37 @@
 <html>
   <head>
     <meta charset="utf-8">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <title>Change Calculator</title>
+    <title>Change Calculator 1.0</title>
   </head>
   <body>
 
     <h1>Change Calculator</h1>
+      <div class="container">
+        <div class="container-column">
+          <div>
+            <label for="amount-due">How much is due for the sale?</label><br>
+            $<input id="amount-due" name="amount-due" type="number" />
+          </div>
 
-    <div class="container-column">
-      <div>
-        <p><label for="amount-due">How much is due for the sale?</label></p>
-        $ <input id="amount-due" name="amount-due" type="number" />
-      </div>
+          <div>
+            <label for="amount-received">How much has the customer given you?</label><br>
+            $<input id="amount-received" name="amount-received" type="number" />
+          </div>
 
-      <div>
-        <p><label for="amount-received">How much has the customer given you?</label></p>
-        $ <input id="amount-received" name="amount-received" type="number" />
-      </div>
-
-        <div>
-          <button id="calculate-change" onclick="calculateChange()">Calculate</button>
-          <button id="reset" onclick="formReset()">Reset</button>
+          <div>
+            <button id="calculate-change" onclick="calculateChange()">Calculate</button>
+            <button id="reset" onclick="formReset()">Reset</button>
+          </div>
+        
+          <div id="change">
+            Change Due:
+          </div>
         </div>
-    </div>
-
-    <h2 id="change">Change:</h2>
 
     <div class="container">
       <div class="container-column">
@@ -37,8 +43,6 @@
           <span id="two-dollar">$2: </span>
           <span id="one-dollar">$1: </span>
         </div>
-      
-
     
       <div class="container-column">
         <span id="cents-output">Cents: </span>
@@ -48,6 +52,7 @@
         <span id="pennies-output">Pennies: </span>
       </div>
     </div>
+  </div>
 
     <script src="main.js" charset="utf-8"></script>
   </body>

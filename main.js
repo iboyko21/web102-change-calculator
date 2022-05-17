@@ -1,15 +1,14 @@
 var calculateChange = function(price, cash) {
-    price = document.getElementById("amount-due").value*100;
-    cash = document.getElementById("amount-received").value*100;
+    price = Math.round(document.getElementById("amount-due").value*100);
+    cash = Math.round(document.getElementById("amount-received").value*100);
     // console.log("Price: " + price);
     // console.log("Cash: " + cash);
-    var returnValue = Math.round(cash - price);
+    var returnValue = cash - price;
     if(returnValue < 0) {
-        alert("Not enough $$!!!!!");
+        alert("Not enough $$ !!!!!");
         return;
     }
-    // console.log("Return Value: " + returnValue);
-    document.getElementById("change").innerHTML = "Total change: $" + parseFloat(returnValue/100).toFixed(2);
+    document.getElementById("change").innerHTML = "Change Due: $" + parseFloat(returnValue/100).toFixed(2);
 
     var change = {};
     const coinTypes = ["twenty", "ten", "five", "two", "dollar", "quarter", "dime", "nickle", "penny"];
@@ -60,13 +59,13 @@ var calculateChange = function(price, cash) {
     } else {
         document.getElementById("one-dollar").innerHTML = `$1: 0`;
     }
-    
-
 
     cents = parseInt(((cash - price)/100).toString().split('.')[1]);
-    // cents = parseFloat((cash - price)/100).toFixed(2);
-    // cents = parseInt(cents.toString().split('.')[1]);
-    document.getElementById("cents-output").innerHTML = `Cents: ${cents}`;
+    if (isNaN(cents)) {
+        document.getElementById("cents-output").innerHTML = `Cents: 0`;
+    } else {
+        document.getElementById("cents-output").innerHTML = `Cents: ${cents}`;
+    }
 
     if (change["quarter"] != undefined) {
         document.getElementById("quarters-output").innerHTML = `Quarters: ${change["quarter"]}`;
@@ -80,23 +79,22 @@ var calculateChange = function(price, cash) {
         document.getElementById("dimes-output").innerHTML = `Dimes: 0`;
     }
 
-   if (change["nickle"] != undefined) {
+    if (change["nickle"] != undefined) {
         document.getElementById("nickels-output").innerHTML = `Nickels: ${change["nickle"]}`;
-   } else {
+    } else {
         document.getElementById("nickels-output").innerHTML = `Nickels: 0`;
-   }
+    }
 
-   if (change["penny"] != undefined) {
+    if (change["penny"] != undefined) {
         document.getElementById("pennies-output").innerHTML = `Pennies: ${change["penny"]}`;
-   } else {
+    } else {
         document.getElementById("pennies-output").innerHTML = `Pennies: 0`;
-   }
+    }
     
-//    console.log(change);
     return change;
 }
 
-function formReset(e){
+function formReset(){
     document.getElementById("amount-due").value="";
     document.getElementById("amount-received").value="";
 }
