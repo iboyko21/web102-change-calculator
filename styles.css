@@ -25,7 +25,7 @@
   background-color: silver;
   width: 10rem;
   padding: .8rem;
-  margin: .5rem;
+  margin: .1rem;
 }
 
 /* ----------------------------------------------------------- */
@@ -56,10 +56,18 @@
 }
 
   button {
-    width: 60%;
-    text-align: center;
+    /* width: 60%; */
+    /* text-align: center; */
+    background-color: aquamarine;
+    border: 0;
+    width: 5rem;
+    padding: .5rem;
+    border: 1px dashed red;
   }
 
+input {
+  width: 5rem;
+}
   #dollars-output, #cents-output {
     background-color: aqua;
     text-align: center;

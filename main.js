@@ -3,11 +3,12 @@ var calculateChange = function(price, cash) {
     cash = document.getElementById("amount-received").value*100;
     // console.log("Price: " + price);
     // console.log("Cash: " + cash);
-
     var returnValue = Math.round(cash - price);
-    // var returnValue = cash - price;
-
-    console.log("Return Value: " + returnValue);
+    if(returnValue < 0) {
+        alert("Not enough $$!!!!!");
+        return;
+    }
+    // console.log("Return Value: " + returnValue);
     document.getElementById("change").innerHTML = "Total change: $" + parseFloat(returnValue/100).toFixed(2);
 
     var change = {};
@@ -61,9 +62,10 @@ var calculateChange = function(price, cash) {
     }
     
 
-    cents = parseFloat((cash - price)/100).toFixed(2);
-    cents = parseInt(cents.toString().split('.')[1]);
-    console.log("Cents value: " + cents)
+
+    cents = parseInt(((cash - price)/100).toString().split('.')[1]);
+    // cents = parseFloat((cash - price)/100).toFixed(2);
+    // cents = parseInt(cents.toString().split('.')[1]);
     document.getElementById("cents-output").innerHTML = `Cents: ${cents}`;
 
     if (change["quarter"] != undefined) {
@@ -90,6 +92,11 @@ var calculateChange = function(price, cash) {
         document.getElementById("pennies-output").innerHTML = `Pennies: 0`;
    }
     
-   console.log(change);
+//    console.log(change);
     return change;
+}
+
+function formReset(e){
+    document.getElementById("amount-due").value="";
+    document.getElementById("amount-received").value="";
 }
