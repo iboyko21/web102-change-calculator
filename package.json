@@ -1,7 +1,7 @@
 {
     "name": "change-calculator",
     "version": "0.2.0",
-    "description": "WEB101 Change Calculator",
+    "description": "Change Calculator",
     "private": true,
     "repository": {},
     "license": "mit",

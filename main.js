@@ -1,8 +1,7 @@
 var calculateChange = function(price, cash) {
     price = Math.round(document.getElementById("amount-due").value*100);
     cash = Math.round(document.getElementById("amount-received").value*100);
-    // console.log("Price: " + price);
-    // console.log("Cash: " + cash);
+
     var returnValue = cash - price;
     if(returnValue < 0) {
         alert("Not enough $$ !!!!!");
