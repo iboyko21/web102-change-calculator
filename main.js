@@ -5,7 +5,7 @@ let calculateChange = function(price, cash) {
     let returnValue = cash - price;
     if(returnValue < 0) {
         alert("Not enough $$ !!!!!");
-        return;
+        return
     }
     document.getElementById("change").innerHTML = "Change Due: $" + parseFloat(returnValue/100).toFixed(2);
 
